@@ -107,7 +107,7 @@ teste_novo_cliente = pipeline_teste(teste_novo_cliente)
 cliente_pred = teste_novo_cliente.drop(["Mau"], axis=1)
 
 if st.button("Enviar"):
-    model = joblib.load("modelo/xgb.joblib")
+    model = joblib.load("xgb.joblib")
     final_pred = model.predict(cliente_pred)
     if final_pred[-1] == 0:
         st.success("### Parabéns! Você teve o cartão de crédito aprovado")
